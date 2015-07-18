@@ -7,14 +7,15 @@ public class Solution {
         for(int i=0;i<numRows;i++) {
             int cur_idx = i, pi=0;
             while(cur_idx<s.length()) {
-                sb.append(s.charAt(cur_idx))
-                // Line 8: error: ';' expected
+                sb.append(s.charAt(cur_idx));
                 if(pluses[pi] > 0) {
                     cur_idx += pluses[pi++];
                     if(pluses[pi]==0)   pi=0;
                 } else {
                     if(pluses[++pi]>0){
                         cur_idx += plus[pi];
+                        // Line 14: error: cannot find symbol: variable plus
+                        // pluses여야 하는데 plus로 작성하였음.
                         pi=0;
                     } else break;
                 }
