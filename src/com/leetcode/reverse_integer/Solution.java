@@ -4,11 +4,8 @@ public class Solution {
     public int reverse(int x) {
         int r=0;
         int xx=x;
-        boolean minus = false;
-        if(x<0){
-            minus = true;
+        if(x<0)
             xx = -x;
-        }
         while(xx>0){
             if(r>Integer.MAX_VALUE/10){
                 r = 0;
@@ -18,9 +15,8 @@ public class Solution {
             r += xx%10;
             xx /= 10;
         }
-        if(minus){
+        if(x<0)
             r *= -1;
-        }
         return r;
     }
 }
