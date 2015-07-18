@@ -11,11 +11,12 @@ public class Solution {
                 if(pluses[pi] > 0) {
                     cur_idx += pluses[pi++];
                     if(pluses[pi]==0)   pi=0;
+                    // Runtime Error Message
+                    // Line 11: java.lang.ArrayIndexOutOfBoundsException: 2
+                    // Last execute Input: "ABCD", 3
                 } else {
                     if(pluses[++pi]>0){
-                        cur_idx += plus[pi];
-                        // Line 14: error: cannot find symbol: variable plus
-                        // pluses여야 하는데 plus로 작성하였음.
+                        cur_idx += pluses[pi];
                         pi=0;
                     } else break;
                 }
