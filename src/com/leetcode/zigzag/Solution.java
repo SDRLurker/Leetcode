@@ -4,6 +4,7 @@ public class Solution {
     public String convert(String s, int numRows) {
         StringBuffer sb = new StringBuffer();
         int pluses[] = new int[] {(numRows-1)*2, 0};
+        if(numRows == 1)    pluses[0] = 1;
         for(int i=0;i<numRows;i++) {
             int cur_idx = i, pi=0;
             while(cur_idx<s.length()) {
