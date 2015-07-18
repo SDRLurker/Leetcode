@@ -2,8 +2,8 @@ package com.leetcode.reverse_integer;
 
 public class Solution {
     public int reverse(int x) {
-        int r=0;
-        long xx=x;
+        long r=0;
+        int xx=x;
         boolean minus = false;
         if(x<0){
             minus = true;
@@ -18,5 +18,7 @@ public class Solution {
             r *= -1;
         }
         return r;
+        // Line 18: Type mismatch: cannot convert from long to int
+        // 리턴은 int형인데 long형 변수를 리턴함.
     }
 }
