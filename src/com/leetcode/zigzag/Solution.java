@@ -10,10 +10,8 @@ public class Solution {
                 sb.append(s.charAt(cur_idx));
                 if(pluses[pi] > 0) {
                     cur_idx += pluses[pi++];
+                    if(pi % 2 == 0) pi=0;
                     if(pluses[pi]==0)   pi=0;
-                    // Runtime Error Message
-                    // Line 11: java.lang.ArrayIndexOutOfBoundsException: 2
-                    // Last execute Input: "ABCD", 3
                 } else {
                     if(pluses[++pi]>0){
                         cur_idx += pluses[pi];
