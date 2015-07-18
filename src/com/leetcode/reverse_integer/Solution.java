@@ -3,7 +3,6 @@ package com.leetcode.reverse_integer;
 public class Solution {
     public int reverse(int x) {
         int r=0;
-        long rr=0L;
         int xx=x;
         boolean minus = false;
         if(x<0){
@@ -11,15 +10,14 @@ public class Solution {
             xx = -x;
         }
         while(xx>0){
-            rr *= 10;
-            rr += xx%10;
-            if(rr>Integer.MAX_VALUE){
-                rr = 0;
+            if(r>Integer.MAX_VALUE/10){
+                r = 0;
                 break;
             }
+            r *= 10;
+            r += xx%10;
             xx /= 10;
         }
-        r = (int)rr;
         if(minus){
             r *= -1;
         }
