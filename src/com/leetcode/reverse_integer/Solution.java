@@ -2,7 +2,8 @@ package com.leetcode.reverse_integer;
 
 public class Solution {
     public int reverse(int x) {
-        long r=0;
+        int r=0;
+        long rr=0L;
         int xx=x;
         boolean minus = false;
         if(x<0){
@@ -10,15 +11,19 @@ public class Solution {
             xx = -x;
         }
         while(xx>0){
-            r *= 10;
-            r += xx%10;
+            rr *= 10;
+            rr += xx%10;
+            if(rr>Integer.MAX_VALUE){
+                rr = 0;
+                break;
+            }
             xx /= 10;
         }
+        r = (int)rr;
         if(minus){
             r *= -1;
         }
         return r;
-        // Line 18: Type mismatch: cannot convert from long to int
-        // 리턴은 int형인데 long형 변수를 리턴함.
     }
 }
+
