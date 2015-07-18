@@ -3,7 +3,7 @@ package com.leetcode.reverse_integer;
 public class Solution {
     public int reverse(int x) {
         int r=0;
-        int xx=x;
+        long xx=x;
         boolean minus = false;
         if(x<0){
             minus = true;
