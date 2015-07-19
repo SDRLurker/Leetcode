@@ -9,5 +9,8 @@ public class Testcase {
 		// TRY : 002
 		System.out.println(s.myAtoi("-1"));
 		// Expected(정답): -1, Output: 0
+		// TRY : 003
+		System.out.println(s.myAtoi("+-2"));
+		// Expected(정답): 0, Output: -2
 	}
 }

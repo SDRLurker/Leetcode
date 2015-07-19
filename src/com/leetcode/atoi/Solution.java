@@ -13,6 +13,7 @@ public class Solution {
                 else if(c=='-'){
                     minus = true;
                     firstspace = false;
+                    continue;
                 } 
                 else if(c<'0' || c>'9') break;
             }
