@@ -9,7 +9,10 @@ public class Solution {
             char c = str.charAt(i);
             if(firstspace){
                 if(c==' ' || c=='\t')   continue;
-                else if(c=='+') continue;
+                else if(c=='+'){
+                    firstspace = false;
+                    continue;
+                }
                 else if(c=='-'){
                     minus = true;
                     firstspace = false;
