@@ -25,7 +25,10 @@ public class Solution {
                 if((long)result*10 > (long)Integer.MAX_VALUE)
                     result = (minus) ? Integer.MIN_VALUE:Integer.MAX_VALUE;
                 result *=10;
-                result += (c - '0');
+                if((long)result + (c - '0') > (long)Integer.MAX_VALUE)
+                    result = (minus) ? Integer.MIN_VALUE:Integer.MAX_VALUE;
+                else
+                    result += (c - '0');
             } else if (!firstspace)     break;
         }
         
