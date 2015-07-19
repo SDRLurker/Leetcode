@@ -22,7 +22,7 @@ public class Solution {
             }
             if(c>='0' && c<='9'){
                 firstspace = false;
-                if((long)result*10 > Integer.MAX_VALUE)
+                if((long)result*10 > (long)Integer.MAX_VALUE)
                     result = (minus) ? Integer.MIN_VALUE:Integer.MAX_VALUE;
                 result *=10;
                 result += (c - '0');

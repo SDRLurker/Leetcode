@@ -13,6 +13,7 @@ public class Testcase {
 		System.out.println(s.myAtoi("+-2"));
 		// Expected(정답): 0, Output: -2
 		// TRY : 004
+		// TRY : 005
 		System.out.println(s.myAtoi("2147483648"));
 		// Expected(정답): 2147483647, Output: -2147483648
 	}
