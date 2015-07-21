@@ -10,7 +10,7 @@ public class Solution {
             switch(s.charAt(i)){
                 case 'M':
                     if(cstart){
-                        number += 900;
+                        number += 800;
                         cstart = false;
                     } else {
                         number += 1000;
