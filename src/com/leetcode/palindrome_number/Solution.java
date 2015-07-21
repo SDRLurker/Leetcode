@@ -17,7 +17,8 @@ public class Solution {
             high = x / (int) Math.pow(10, digits(x) - 1);
             if (high != low)    return false;
             x -= low;
-            x -= high * (int) Math.pow(10, digits(x) -1);
+            x -= high * (int) Math.pow(10, digits(x) - 1);
+            x /= 10;
         }
         return true;
     }
