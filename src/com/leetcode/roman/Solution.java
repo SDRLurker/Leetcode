@@ -1,76 +1,59 @@
 package com.leetcode.roman;
 
 public class Solution {
-    public int romanToInt(String s) {
-        int number = 0;
-        boolean istart = false, vstart = false;
-        boolean xstart = false, lstart = false;
-        boolean cstart = false, dstart = false;
-        for(int i=0;i<s.length();i++){
-            switch(s.charAt(i)){
-                case 'M':
-                    if(cstart){
-                        number += 800;
-                        cstart = false;
-                    } else {
-                        number += 1000;
-                    }
-                    break;
-                case 'D':
-                    if(cstart){
-                        number += 300;
-                        cstart = false;
-                    } else {
-                        dstart = true;
-                        number += 500;    
-                    }
-                    break;
-                case 'C':
-                    if(xstart){
-                        number += 80;
-                        xstart = false;
-                    } else {
-                        if(!cstart)     
-                            cstart = true;
-                        number += 100;
-                    }
-                    break;
-                case 'L':
-                    if(xstart){
-                        number += 30;
-                        xstart = false;
-                    } else {
-                        lstart = true;
-                        number += 50;
-                    }
-                    break;
-                case 'X':
-                    if(istart){
-                        number += 8;
-                        istart = false;
-                    } else {
-                        if(!xstart)     
-                            xstart = true;
-                        number += 10;
-                    }
-                    break;
-                case 'V':
-                    if(istart){
-                       number += 3;
-                       istart = false;
-                    } else {
-                        vstart = true;
-                        number += 5;
-                    }
-                    break;
-                case 'I':
-                    if(!istart)     
-                        istart = true;
-                    number++;
-                    break;
+    private class RomanDic {
+        private String roman;
+        private int arabic;
+        public RomanDic(String roman, int arabic) {
+            this.roman = roman;
+            this.arabic = arabic;
+        }
+    }
+    private final RomanDic[] table = {
+        new RomanDic("MMM", 3000),
+        new RomanDic("MM", 2000),
+        new RomanDic("CM", 900),
+        new RomanDic("M", 1000),
+        new RomanDic("DCCC", 800),
+        new RomanDic("DCC", 700),
+        new RomanDic("DC", 600),
+        new RomanDic("CD", 400),
+        new RomanDic("D", 500),
+        new RomanDic("CCC", 300),
+        new RomanDic("CC", 200),
+        new RomanDic("XC", 90),
+        new RomanDic("C", 100),
+        new RomanDic("LXXX", 80),
+        new RomanDic("LXX", 70),
+        new RomanDic("LX", 60),
+        new RomanDic("XL", 40),
+        new RomanDic("L", 50),
+        new RomanDic("XXX", 30),
+        new RomanDic("XX", 20),
+        new RomanDic("IX", 9),
+        new RomanDic("X", 10),
+        new RomanDic("VIII", 8),
+        new RomanDic("VII", 7),
+        new RomanDic("VI", 6),
+        new RomanDic("IV", 4),
+        new RomanDic("V", 5),
+        new RomanDic("III", 3),
+        new RomanDic("II", 2),
+        new RomanDic("I", 1)
+    };
 
+    public int romanToInt(String s) {
+        int arabic_num = 0;
+        StringBuffer sb = new StringBuffer(s);
+        for (RomanDic r: table) {
+            //if (s.indexOf(r.roman) >= 0) {
+            int start = sb.indexOf(r.roman);
+            if (start >= 0) {
+                arabic_num += r.arabic;
+                //s = s.replace(r.roman, "");
+                sb.replace(start, start+r.roman.length(), "");
             }
         }
-        return number;
+        return arabic_num;     
     }
 }
