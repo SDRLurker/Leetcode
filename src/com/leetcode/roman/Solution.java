@@ -27,7 +27,7 @@ public class Solution {
                     break;
                 case 'C':
                     if(xstart){
-                        number += 90;
+                        number += 80;
                         xstart = false;
                     } else {
                         if(!cstart)     
@@ -46,7 +46,7 @@ public class Solution {
                     break;
                 case 'X':
                     if(istart){
-                        number += 9;
+                        number += 8;
                         istart = false;
                     } else {
                         if(!xstart)     

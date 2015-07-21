@@ -14,6 +14,9 @@ public class Testcase {
 		// Expected(정답): 1996, Output: 2106
 		// TRY:004
 		System.out.println(s.romanToInt("MCMXCVI"));
-		// Expected(정답): 1996, Output: 2006	
+		// Expected(정답): 1996, Output: 2006
+		// TRY:005
+		System.out.println(s.romanToInt("MDCCCLXXXIV"));
+		// Expected(정답): 1884, Output: 1885	
 	}
 }
