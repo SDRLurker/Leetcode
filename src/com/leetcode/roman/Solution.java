@@ -5,19 +5,33 @@ public class Solution {
         int number = 0;
         boolean istart = false, vstart = false;
         boolean xstart = false, lstart = false;
+        boolean cstart = false, dstart = false;
         for(int i=0;i<s.length();i++){
             switch(s.charAt(i)){
                 case 'M':
-                    number += 1000;
+                    if(cstart){
+                        number += 900;
+                        cstart = false;
+                    } else {
+                        number += 1000;
+                    }
                     break;
                 case 'D':
-                    number += 500;
+                    if(cstart){
+                        number += 400;
+                        cstart = false;
+                    } else {
+                        dstart = true;
+                        number += 500;    
+                    }
                     break;
                 case 'C':
                     if(xstart){
                         number += 90;
                         xstart = false;
                     } else {
+                        if(!cstart)     
+                            cstart = true;
                         number += 100;
                     }
                     break;

@@ -8,6 +8,9 @@ public class Testcase {
 		// Expected(정답): 1996, Output: 2216
 		// TRY:002
 		System.out.println(s.romanToInt("MCMXCVI"));
-		// Expected(정답): 1996, Output: 2206	
+		// Expected(정답): 1996, Output: 2206
+		// TRY:003
+		System.out.println(s.romanToInt("MCMXCVI"));
+		// Expected(정답): 1996, Output: 2106	
 	}
 }
