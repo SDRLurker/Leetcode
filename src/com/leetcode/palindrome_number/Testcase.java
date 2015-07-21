@@ -9,5 +9,8 @@ public class Testcase {
 		// TRY:002
 		System.out.println(s.isPalindrome(-101));
 		// Expected(정답): false, Output: true
+		// TRY:003
+		System.out.println(s.isPalindrome(121));
+		// Expected(정답): true, Output: false		
 	}
 }
