@@ -18,7 +18,7 @@ public class Solution {
                     break;
                 case 'D':
                     if(cstart){
-                        number += 400;
+                        number += 300;
                         cstart = false;
                     } else {
                         dstart = true;
@@ -37,7 +37,7 @@ public class Solution {
                     break;
                 case 'L':
                     if(xstart){
-                        number += 40;
+                        number += 30;
                         xstart = false;
                     } else {
                         lstart = true;
@@ -56,7 +56,7 @@ public class Solution {
                     break;
                 case 'V':
                     if(istart){
-                       number += 4;
+                       number += 3;
                        istart = false;
                     } else {
                         vstart = true;
